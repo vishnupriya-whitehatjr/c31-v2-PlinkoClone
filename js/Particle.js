@@ -1,7 +1,7 @@
 class Particle {
     constructor(x, y) {
       
-        this.body = Bodies.circle(x, y, 20);
+        this.body = Bodies.circle(x, y, 10);
         this.r = 20;
         World.add(world, this.body);
     }
@@ -15,9 +15,9 @@ class Particle {
         rotate(angle);
         imageMode(CENTER);
         noStroke();
-        fill("pink");
+        fill(random(0, 255), random(0, 255), random(0, 255));
         ellipseMode(RADIUS);
-        ellipse(0, 0, 20,20);
+        ellipse(0, 0, 10,10);
         pop();
     }
 

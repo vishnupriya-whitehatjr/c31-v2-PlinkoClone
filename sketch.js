@@ -20,12 +20,12 @@ function setup() {
 }
 
 function draw() {
-  background("lavender");
-  
+  background("black");
+  Engine.update(engine);
    for (var i = 0; i < plinkos.length; i++) {
      plinkos[i].display();
    }
-   particles.push(new Particle(random(0, 600), 0));
+   particles.push(new Particle(random(0, 600), random(0,700)));
    for (var j = 0; j < particles.length; j++) {
      particles[j].display();
    }
