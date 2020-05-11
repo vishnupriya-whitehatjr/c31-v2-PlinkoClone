@@ -25,7 +25,7 @@ function draw() {
    for (var i = 0; i < plinkos.length; i++) {
      plinkos[i].display();
    }
-   particles.push(new Particle(random(0, 600), random(0,700)));
+   particles.push(new Particle(random(0, 600), 10));
    for (var j = 0; j < particles.length; j++) {
      particles[j].display();
    }
