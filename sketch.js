@@ -15,12 +15,15 @@ function setup() {
    for (var k = 100; k < 600; k = k + 100) {
      divisions.push(new Divisions(k, 630, 10, 100));
    }
-  for (var j = 50; j < 600; j=j+100) {
-    for (var i = 50; i < 600 + 1; i=i+100) {
+  for (var j = 50; j < 500; j=j+100) {
+  for (var i = 75; i < 600 + 1; i=i+100) {
      plinkos.push(new Plinko(i,j));
     }
   }
- 
+ /* for (var j = 50; j < 600; j = j + 100) {
+   
+    plinkos.push(new Plinko(150, j));
+  }*/
 }
 
 function draw() {
@@ -30,7 +33,10 @@ function draw() {
    for (var i = 0; i < plinkos.length; i++) {
      plinkos[i].display();
    }
-   particles.push(new Particle(random(0, 600), 10));
+   if(frameCount%100 ===0){
+     particles.push(new Particle(300, 10));
+   }
+  
    for (var j = 0; j < particles.length; j++) {
      particles[j].display();
    }
