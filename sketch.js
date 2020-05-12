@@ -6,25 +6,48 @@ var Engine = Matter.Engine,
 var particles = [];
 var plinkos = [];
 var divisions =[];
+var divisionHeight=300;
 
 function setup() {
-  createCanvas(600, 700);
+  createCanvas(600, 800);
   engine = Engine.create();
   world = engine.world;
-  ground = new Ground(300,690,600,20);
-   for (var k = 100; k < 600; k = k + 100) {
-     divisions.push(new Divisions(k, 630, 10, 100));
+  ground = new Ground(300,height,600,20);
+
+
+   for (var k = 0; k < 610; k = k + 75) {
+     divisions.push(new Divisions(k, height-divisionHeight/2, 10, divisionHeight));
    }
-  for (var j = 50; j < 500; j=j+100) {
-  for (var i = 75; i < 600 + 1; i=i+100) {
-     plinkos.push(new Plinko(i,j));
+
+
+    for (var j = 50; j < 600; j=j+50) 
+    {
+    
+       plinkos.push(new Plinko(j,75));
     }
-  }
- /* for (var j = 50; j < 600; j = j + 100) {
-   
-    plinkos.push(new Plinko(150, j));
-  }*/
+
+    for (var j = 50; j < 600; j=j+50) 
+    {
+    
+       plinkos.push(new Plinko(j,175));
+    }
+
+     for (var j = 75; j < 600; j=j+50) 
+    {
+    
+       plinkos.push(new Plinko(j,275));
+    }
+
+     for (var j = 50; j < 600; j=j+50) 
+    {
+    
+       plinkos.push(new Plinko(j,375));
+    }
+
+    
 }
+ 
+
 
 function draw() {
   background("black");
@@ -33,8 +56,8 @@ function draw() {
    for (var i = 0; i < plinkos.length; i++) {
      plinkos[i].display();
    }
-   if(frameCount%100 ===0){
-     particles.push(new Particle(300, 10));
+   if(frameCount%50 ===0){
+     particles.push(new Particle(random(width/2-10, width/2+10), 10,10));
    }
   
    for (var j = 0; j < particles.length; j++) {
